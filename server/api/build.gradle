@@ -5,7 +5,7 @@ plugins {
 
 // TODO any of the following should work?
 //apply plugin:    'integration-plugin'
-//apply plugin:    'com.rds.example.gradle.integration-plugin'
+apply plugin:    'com.rds.example.gradle.integration-plugin'
 
 dependencies {
 }
