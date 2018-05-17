@@ -11,22 +11,13 @@ repositories {
 
 dependencies {
     gradleApi()
-//    compile 'org.codehaus.groovy:groovy-all:2.3.11'
 }
 
-//sourceCompatibility = 1.8
-//targetCompatibility = 1.8
-//
-//group 'com.rds.example.gradle'
-//version '0.1-SNAPSHOT'
-
 gradlePlugin {
-
     plugins {
         integrationPlugin {
             id = 'com.rds.example.gradle.integration-plugin'
             implementationClass = 'com.rds.example.gradle.IntegrationPlugin'
         }
     }
-
 }

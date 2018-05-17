@@ -8,7 +8,7 @@ public class IntegrationPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project target) {
-        target.getTasks().create("greetingAction", Greeting.class);
+        target.getTasks().create("greeting", Greeting.class);
     }
 
 }
