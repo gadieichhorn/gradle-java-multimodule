@@ -1,0 +1,9 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    compile project(':server:api')
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+}
