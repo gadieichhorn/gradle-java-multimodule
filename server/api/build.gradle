@@ -1,11 +1,11 @@
 plugins {
     id 'java-library'
-//    id 'com.rds.example.gradle.integration-plugin'
+    id 'com.rds.example.gradle.integration-plugin'
 }
 
 // TODO any of the following should work?
 //apply plugin:    'integration-plugin'
-apply plugin:    'com.rds.example.gradle.integration-plugin'
+//apply plugin:    'com.rds.example.gradle.integration-plugin'
 
 dependencies {
 }
