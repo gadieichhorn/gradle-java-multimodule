@@ -9,5 +9,10 @@
 
 rootProject.name = 'gradle-java-multimodule'
 
+// SERVER
 include 'server:api'
+include 'server:core'
+
+// CLIENT
+include 'client:web'
 

@@ -1,15 +1,11 @@
 plugins {
-    id 'java'
+    id 'java-library'
+//    id 'com.rds.example.gradle.integration-plugin'
 }
 
-version 'unspecified'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+// TODO any of the following should work?
+//apply plugin:    'integration-plugin'
+//apply plugin:    'com.rds.example.gradle.integration-plugin'
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
