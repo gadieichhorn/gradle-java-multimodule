@@ -15,4 +15,7 @@ include 'server:core'
 
 // CLIENT
 include 'client:web'
+include 'rest'
 
+// DEPLOY
+include 'deploy:rest'
