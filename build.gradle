@@ -45,7 +45,8 @@ subprojects {
     test {
         useJUnitPlatform()
         testLogging {
-            events 'PASSED', 'FAILED', 'SKIPPED'
+            showStandardStreams true
+            events "passed", "skipped", "failed"
         }
     }
 

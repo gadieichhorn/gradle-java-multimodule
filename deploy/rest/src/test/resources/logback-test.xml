@@ -6,7 +6,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.rds." level="DEBUG" additivity="false">
+    <logger name="com.rds.example.gradle" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 

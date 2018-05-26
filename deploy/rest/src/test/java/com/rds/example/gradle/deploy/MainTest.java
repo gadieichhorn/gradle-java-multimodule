@@ -13,10 +13,17 @@ import org.junit.jupiter.api.extension.ExtendWith;
 class MainTest {
 
     @Test
-    @Timeout(1000)
+    @Timeout(3000)
     void canStartInstanceTest(Vertx vertx, VertxTestContext context) {
         log.info("TEST");
-        vertx.deployVerticle(new MainVerticle(), context.succeeding());
+        vertx.deployVerticle(new MainVerticle(), stringAsyncResult -> {
+            if(stringAsyncResult.succeeded()){
+                log.info("DEPLOYED: {}", stringAsyncResult.result());
+                context.completeNow();
+            }else {
+                context.failNow(stringAsyncResult.cause());
+            }
+        });
     }
 
 }

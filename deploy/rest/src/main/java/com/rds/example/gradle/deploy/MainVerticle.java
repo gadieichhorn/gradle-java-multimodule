@@ -1,5 +1,6 @@
 package com.rds.example.gradle.deploy;
 
+import io.vertx.core.http.HttpServer;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import lombok.extern.slf4j.Slf4j;
@@ -7,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MainVerticle extends AbstractVerticle {
 
-    private HttpServeer server;
+    private HttpServer server;
 
     @Override
     public void start(Future<Void> startFuture) {
@@ -15,7 +16,7 @@ public class MainVerticle extends AbstractVerticle {
         server = vertx.createHttpServer().requestHandler(req -> {
             req.response()
                     .putHeader("content-type", "text/plain")
-                    .end("Hello from Vert.x!");
+                    .end("Hello from Main");
         });
 
         // Now bind the server:
