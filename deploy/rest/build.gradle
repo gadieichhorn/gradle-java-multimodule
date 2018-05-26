@@ -1,5 +1,41 @@
+import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
+
 plugins {
-    id 'java'
     id 'application'
+    id 'com.bmuschko.docker-java-application' version '3.2.1'
+//    id 'com.rds.observato.integration-plugin' version project.version
+}
+
+// TODO replace this with the new plugin
+apply from: '../../integration.gradle'
+
+mainClassName = 'com.rds.example.gradle.deploy.Main'
+
+dependencies {
+
+    compile group: 'io.vertx', name: 'vertx-core', version: '3.5.1'
+//    compile group: 'io.vertx', name: 'vertx-web', version: '3.5.1'
+
+    testCompile group: 'io.vertx', name: 'vertx-junit5', version: '3.5.1'
+
+    integrationCompile group: 'org.testcontainers', name: 'testcontainers', version: '1.7.1'
+
+}
+
+build.finalizedBy(dockerBuildImage)
+
+dockerDistTar {
+    environmentVariable('JAVA_OPTS', '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap')
+}
+
+docker {
+    javaApplication {
+        baseImage = 'openjdk:8-jre-alpine'
+        tag = project.group + '/' + project.name
+    }
+}
+
+task pushImage(type: DockerPushImage, dependsOn: [dockerBuildImage]) {
+    imageName = dockerBuildImage.tag
 }
 
