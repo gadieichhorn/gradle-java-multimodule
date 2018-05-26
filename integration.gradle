@@ -17,13 +17,6 @@ configurations {
 }
 
 task e2e(type: Test) {
-
     testClassesDirs += sourceSets.integration.output.classesDirs
     classpath = sourceSets.integration.runtimeClasspath
-
-    testLogging {
-        showStandardStreams true
-        events "passed", "skipped", "failed"
-    }
-
 }

@@ -1,5 +1,7 @@
 package com.rds.example.gradle;
 
+import com.rds.example.gradle.actions.IntegrationTestTask;
+import org.gradle.api.Action;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
@@ -27,6 +29,12 @@ public class IntegrationPlugin implements Plugin<Project> {
 
         // add the dependency only to the integration tests sourceset
         config.defaultDependencies(dependencies -> dependencies.add(project.getDependencies().create("org.testcontainers:testcontainers:1.7.1")));
+
+        project.getTasks().create("e2e", IntegrationTestTask.class, new Action<IntegrationTestTask>() {
+            public void execute(IntegrationTestTask integrationTestTask) {
+                integrationTestTask.greet();
+            }
+        });
 
     }
 

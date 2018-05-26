@@ -3,11 +3,11 @@ import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
 plugins {
     id 'application'
     id 'com.bmuschko.docker-java-application' version '3.2.1'
-//    id 'com.rds.observato.integration-plugin' version project.version
+    id 'com.rds.example.gradle.integration-plugin'
 }
 
 // TODO replace this with the new plugin
-apply from: '../../integration.gradle'
+//apply from: '../../integration.gradle'
 
 mainClassName = 'com.rds.example.gradle.deploy.Main'
 

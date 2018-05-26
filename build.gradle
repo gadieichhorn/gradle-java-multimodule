@@ -44,10 +44,14 @@ subprojects {
 
     test {
         useJUnitPlatform()
+
         testLogging {
-            showStandardStreams true
-            events "passed", "skipped", "failed"
+            events "standardOut", "started", "passed", "skipped", "failed"
         }
+
+        testLogging.showStandardStreams = true
+        testLogging.exceptionFormat = 'full'
     }
+
 
 }
