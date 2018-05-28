@@ -23,6 +23,10 @@ dependencies {
 
 }
 
+integration {
+    folder = 'gggggg'
+}
+
 build.finalizedBy(dockerBuildImage)
 
 dockerDistTar {

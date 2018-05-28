@@ -1,6 +1,8 @@
 package com.rds.example.gradle;
 
+import com.rds.example.gradle.actions.IntegrationTestTask;
 import lombok.extern.slf4j.Slf4j;
+import org.gradle.api.Action;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
@@ -15,6 +17,8 @@ import java.util.Arrays;
 public class IntegrationPlugin implements Plugin<Project> {
 
     public void apply(Project project) {
+
+        IntegrationExtension extension = project.getExtensions().create("integration", IntegrationExtension.class, project);
 
         project.getPlugins().withType(JavaPlugin.class, javaPlugin -> {
 
@@ -52,6 +56,7 @@ public class IntegrationPlugin implements Plugin<Project> {
 
         });
 
+        project.getTasks().create("integration", IntegrationTestTask.class, integrationTestTask -> integrationTestTask.getFolder().set(extension.getFolder()));
 
     }
 
