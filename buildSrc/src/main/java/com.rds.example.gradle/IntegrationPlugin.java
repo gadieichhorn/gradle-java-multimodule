@@ -1,12 +1,9 @@
 package com.rds.example.gradle;
 
-import com.rds.example.gradle.actions.IntegrationTestTask;
-import groovy.util.logging.Slf4j;
-import org.gradle.api.Action;
+import lombok.extern.slf4j.Slf4j;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
-import org.gradle.api.artifacts.DependencySet;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;

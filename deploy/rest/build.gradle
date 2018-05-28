@@ -19,6 +19,7 @@ dependencies {
     // why this is not imported from standard import > compile?
     integrationCompile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
     integrationCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    integrationCompile "org.testcontainers:testcontainers:1.7.1"
 
 }
 
