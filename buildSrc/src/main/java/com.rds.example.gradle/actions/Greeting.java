@@ -7,7 +7,7 @@ public class Greeting extends DefaultTask {
 
     @TaskAction
     public void greet() {
-        System.out.println("Greeting from plugin");
+        System.out.println("Greeting from integration plugin");
     }
 
 }

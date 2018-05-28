@@ -7,18 +7,18 @@ plugins {
 }
 
 // TODO replace this with the new plugin
-//apply from: '../../integration.gradle'
 
 mainClassName = 'com.rds.example.gradle.deploy.Main'
 
 dependencies {
 
     compile group: 'io.vertx', name: 'vertx-core', version: '3.5.1'
-//    compile group: 'io.vertx', name: 'vertx-web', version: '3.5.1'
 
     testCompile group: 'io.vertx', name: 'vertx-junit5', version: '3.5.1'
 
-    integrationCompile group: 'org.testcontainers', name: 'testcontainers', version: '1.7.1'
+    // why this is not imported from standard import > compile?
+    integrationCompile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+    integrationCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
 
 }
 
